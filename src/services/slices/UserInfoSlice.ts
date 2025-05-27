@@ -87,7 +87,7 @@ export const userStateSlice = createSlice({
       .addCase(userApi.fulfilled, (state, action) => {
         state.isAuthChecked = true;
         state.user = action.payload.user;
-        state.isAuthChecked = true;
+        state.isAuthenticated = true;
         state.loginUserRequest = false;
       })
       .addCase(userApi.rejected, (state, action) => {

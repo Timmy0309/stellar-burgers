@@ -9,7 +9,7 @@ import userStateSlice from './slices/UserInfoSlice';
 import ingredientsSlice from './slices/IngredientsSlice';
 import feedDataSlice from './slices/FeedDataSlice';
 import burgerConstructorSlice from './slices/BurgerConstructorSlice';
-import ordersHistorySlice from './slices/UserOrdersHistory';
+import ordersHistorySlice from './slices/UserOrdersHistorySlice';
 
 const rootReducer = combineReducers({
   [userStateSlice.name]: userStateSlice.reducer,
