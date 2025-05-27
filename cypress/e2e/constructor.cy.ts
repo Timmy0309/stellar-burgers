@@ -5,6 +5,9 @@ describe('Добавление ингредиента из списка в ко�
     })
 
     it('Добавление булок', function () {
+        cy.get('[data-cy=bun_top_constructor]').should('not.exist');
+        cy.get('[data-cy=bun_bottom_constructor]').should('not.exist');
+
         cy.get('[data-cy=bun_ingredients]')
             .should('exist')
             .and('contain.text', 'Краторная булка N-200i');
@@ -25,6 +28,8 @@ describe('Добавление ингредиента из списка в ко�
     })
     
     it('Добавление начинок', function () {
+        cy.get('[data-cy=main_constructor]').should('not.exist');
+
         cy.get('[data-cy=main_ingredients]')
             .should('exist')
             .and('contain.text', 'Биокотлета из марсианской Магнолии');
