@@ -69,7 +69,7 @@ export const logOutUser = createAsyncThunk(
 export const updateUser = createAsyncThunk('user/update', updateUserApi);
 
 export const userStateSlice = createSlice({
-  name: 'userstate',
+  name: 'userState',
   initialState,
   reducers: {
     authChecked: (state) => {

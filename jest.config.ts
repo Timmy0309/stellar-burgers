@@ -3,9 +3,21 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest';
+import type {Config} from 'jest';
 
 const config: Config = {
+  preset: 'ts-jest',
+  moduleNameMapper: {
+    '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@ui(.*)$': '<rootDir>/src/components/ui$1',
+    '^@ui-pages(.*)$': '<rootDir>/src/components/ui/pages$1',
+    '^@utils-types(.*)$': '<rootDir>/src/utils/types$1',
+    '^@api$': '<rootDir>/src/utils/burger-api.ts',
+    '^@slices(.*)$': '<rootDir>/src/services/slices$1',
+    '^@selectors(.*)$': '<rootDir>/src/services/selectors$1'
+  },
+  testEnvironment: 'jsdom',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -13,7 +25,7 @@ const config: Config = {
   // bail: 0,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\ltimo\\AppData\\Local\\Temp\\jest",
+  // cacheDirectory: "C:\\Users\\admin\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
   // clearMocks: false,
@@ -33,7 +45,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-   coverageProvider: 'v8',
+  coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -103,7 +115,6 @@ const config: Config = {
 
   // A preset that is used as a base for Jest's configuration
   // preset: undefined,
-  preset: 'ts-jest'
 
   // Run tests from one or more projects
   // projects: undefined,
